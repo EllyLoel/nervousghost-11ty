@@ -1,26 +1,24 @@
 const groq = require("groq");
 const client = require("../_11ty/utils/sanityClient.cjs");
-const imageUrl = require("@sanity/image-url");
+const toMarkdown = require("@sanity/block-content-to-markdown");
 
-function generateImageData({ blogImage, date, slug }) {
+function generateImageData({ base, content }) {
 	return {
-		image: `![${blogImage.alt}](${imageUrl(client)
-			.image(blogImage)
-			.width(300)
-			.url()})`,
-		caption: blogImage.caption,
-		date,
-		slug,
+		content: toMarkdown(content),
+		date: base.modified || base.created,
+		created: base.created,
+		modified: base.modified,
+		slug: base.slug,
+		title: base.title,
 	};
 }
 
-async function getImages() {
+async function getGallery() {
 	// Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-	const filter = groq`*[_type == "imageHolder"]`;
+	const filter = groq`*[_type == "note"]`;
 	const projection = groq`{
-    blogImage,
-    date,
-    slug
+		base,
+    content
   }`;
 	const order = `| order(date desc)`;
 	const query = [filter, projection, order].join(" ");
@@ -29,4 +27,4 @@ async function getImages() {
 	return preparePosts;
 }
 
-module.exports = getImages;
+module.exports = getGallery;
