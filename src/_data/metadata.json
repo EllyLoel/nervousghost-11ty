@@ -1,21 +1,19 @@
 {
-  "title": "Title of the website",
-  "short_name": "Short name of the website",
-  "description": "Description of the website.",
-  "url": "https://example.com",
-  "domain": "example.com",
-  "language": "en",
-  "locale": "en_au",
-  "author": {
-    "name": "Author Name",
-    "email": "you@example.com",
-    "url": "https://example.com/about/",
-    "links": {
-      "Mastodon": "https://mastodon.example/@example",
-      "LinkedIn": "https://linkedin.com/in/example",
-      "CodePen": "https://codepen.io/example",
-      "GitHub": "https://github.com/example",
-      "Twitter": "https://twitter.com/example"
-    }
-  }
+	"title": "NERVOUS GHOST",
+	"short_name": "nervousghost",
+	"description": "Description of the website.",
+	"url": "https://nervousghost.com",
+	"domain": "nervousghost.com",
+	"language": "en",
+	"locale": "en_au",
+	"author": {
+		"name": "Brodie Cato",
+		"email": "nervousboo@gmail.com",
+		"url": "https://nervousghost.com/about/",
+		"links": {
+			"YouTube": "https://youtube.com/@nervousghost",
+			"Instagram": "https://instagram.com/nervousgh0st/",
+			"Tumblr": "https://www.tumblr.com/nervousgh0st"
+		}
+	}
 }
