@@ -49,6 +49,7 @@
 		"@sanity/client": "^5.4.1",
 		"@sanity/image-url": "^1.0.2",
 		"@sindresorhus/slugify": "^1.1.2",
+		"@types/markdown-it": "^12.2.3",
 		"a11y.css": "^5.2.0",
 		"cssnano": "^5.1.15",
 		"cssremedy": "0.1.0-beta.2",
