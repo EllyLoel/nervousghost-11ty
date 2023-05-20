@@ -2,6 +2,7 @@
 layout: "layouts/base.njk"
 permalink: "/"
 title: "Home"
+eleventyExcludeFromCollections: true
 ---
 
 # Hi I'm Nervous Ghost
@@ -19,7 +20,7 @@ I'm really gay and I _really really_ love Star Wars :3
 
 ## Artworks from the [gallery](./gallery)
 
-<ul>
+<ul class="[ h-feed ]">
 	{%- for artwork in gallery %}
 	<li>
 		<a href="./gallery/{{artwork.slug}}/">{{ artwork.image | markdown | safe }}</a>
@@ -29,7 +30,7 @@ I'm really gay and I _really really_ love Star Wars :3
 
 ## Notes from my [digital garden](./garden)
 
-<ul>
+<ul class="[ h-feed ]">
 	{%- for note in garden %}
 	<li>
 		<a href="./garden/{{note.slug}}/">{{ note.title }}</a>
@@ -39,7 +40,7 @@ I'm really gay and I _really really_ love Star Wars :3
 
 ## Products
 
-<ul>
+<ul class="[ h-feed ]">
 	{%- for product in catalogue %}
 	<li>
 		<a href="./catalogue/{{product.slug}}/">{{ product.image | markdown | safe }}</a>

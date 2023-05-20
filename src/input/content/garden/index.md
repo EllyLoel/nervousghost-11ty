@@ -1,10 +1,15 @@
 ---
 layout: "layouts/page.njk"
 permalink: "garden/"
-title: "Garden"
+title: "Digital garden"
+eleventyNavigation:
+  order: 5
+eleventyComputed:
+  eleventyNavigation:
+    key: "Garden"
 ---
 
-<ul>
+<ul class="[ h-feed ]">
 	{%- for note in garden %}
 	<li>
 		<a href="./{{note.slug}}/">{{ note.title }}</a>

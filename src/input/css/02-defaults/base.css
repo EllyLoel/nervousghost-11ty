@@ -4,6 +4,16 @@
 	padding: 0;
 }
 
+body {
+	margin-inline: auto;
+	max-inline-size: 70ch;
+	padding: var(--space-l);
+}
+
+body > header {
+	margin-block-end: var(--space-2xl);
+}
+
 main > :is(section, article) {
 	--gap: clamp(1rem, 6vw, 3rem);
 	--full: minmax(var(--gap), 1fr);

@@ -1,12 +1,3 @@
-/* 
- * Calc `em` based line height, bigger line height for smaller font size and smaller line height for bigger font size.
- * @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
- * @link https://codepen.io/supersimplenet/pen/KKXBvMj
- */
-* {
-	line-height: calc(0.25rem + 1em + 0.25rem);
-}
-
 /********************
  * HEADING ELEMENTS *
  ********************/
@@ -23,10 +14,6 @@ header {
 
 :is(ul, ol):not([class]) {
 	padding-inline-start: var(--space-s, 1em);
-}
-
-li:not(:first-child) {
-	margin-block-start: var(--space-4xs, 0.125em);
 }
 
 /******************

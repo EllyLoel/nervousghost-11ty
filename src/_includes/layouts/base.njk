@@ -42,14 +42,18 @@
 		{% include "partials/meta.njk" %}
 	</head>
 	<body>
-		<a href="#main" class="visually-hidden">Skip to main content</a>
+		<a href="#main" class="[ visually-hidden ]">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
 
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul>
+			<nav class="[ main-nav ]" aria-labelledby="main-nav-label">
+				<span id="main-nav-label" hidden>Main</span>
+				<ul class="[ flex flex-wrap align-center ]">
+					<li>
+						<a href="/" class="[ home-link ]"{% if entry.url == page.url %} aria-current="page"{% endif %}>
+							{%- image "../../../assets/img/logo-type.png", "homepage", [200] -%}
+						</a>
+					</li>
 					{%- for entry in collections.all | eleventyNavigation %}
 						<li>
 							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
@@ -59,7 +63,7 @@
 			</nav>
 		</header>
 
-		<main id="main">
+		<main id="main" class="[ flow ]">
 			{{ content | safe }}
 		</main>
 
