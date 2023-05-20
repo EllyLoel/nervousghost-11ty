@@ -7,7 +7,7 @@
 body {
 	margin-inline: auto;
 	max-inline-size: 70ch;
-	padding: var(--space-l);
+	padding: var(--space-s-l);
 }
 
 body > header {
