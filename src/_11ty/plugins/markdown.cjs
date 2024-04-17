@@ -40,12 +40,8 @@ let markdownLibrary = require("markdown-it")({
 	})
 	.use(anchor, {
 		level: 2,
-		permalink: anchor.permalink.headerLink({
-			safariReaderFix: true,
-		}),
 		slugify: slugify,
 	})
-	.use(require("markdown-it-emoji"))
 	.use(require("markdown-it-eleventy-img"), {
 		globalAttributes: {
 			class: "[ image ]",
@@ -60,9 +56,6 @@ let markdownLibrary = require("markdown-it")({
 			widths: ["auto"],
 		},
 	});
-
-markdownLibrary.renderer.rules.emoji = (token, idx) =>
-	`<span class="[ emoji ]">${token[idx].content}</span>`;
 
 module.exports.plugin = (eleventyConfig) => {
 	eleventyConfig.setLibrary("md", markdownLibrary);
